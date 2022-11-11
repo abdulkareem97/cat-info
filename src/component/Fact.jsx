@@ -17,6 +17,10 @@ const Fact = () => {
         })
     }
 
+    const alert = `
+    
+    `
+
     const setFavt = () => {
         const obj = { id: data.length, desc: data }
         // localStorage.setItem("Facts", JSON.stringify(obj));  
@@ -30,6 +34,7 @@ const Fact = () => {
         factArr.push(obj);
         setFavtData(factArr);
         localStorage.setItem('Facts', JSON.stringify(factArr))
+
     }
 
     const delFavt = (id) => {
@@ -47,6 +52,7 @@ const Fact = () => {
             <div className='flex justify-center'>
                 <h2 className='underline text-lg '>Fact About Cats</h2>
             </div>
+
             <div className='flex justify-center p-5 text-center bg-slate-800 text-white rounded-3xl mx-3'>
                 <p className=''> {data}</p>
             </div>
@@ -60,7 +66,7 @@ const Fact = () => {
                 <span className='bg-sky-500 hover:bg-sky-700 p-3 text-white rounded-3xl cursor-pointer'>
                     <RWebShare
                         data={{
-                            text: data,
+                            text:'Intersting Fact About Cat : \n' + data + '\n\n',
                             // url: "http://localhost:3000",
                             title: "Ak - Cat_fact",
                         }}

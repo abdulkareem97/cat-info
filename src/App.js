@@ -4,6 +4,7 @@ import Home from "./component/Home";
 import Fact from "./component/Fact";
 import { useState } from "react";
 import Breeds from "./component/Breeds";
+import BreedDetails from "./component/BreedDetails";
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <Route path='/' element={<Home />}/>
         <Route path='/fact' element={<Fact />}/>
         <Route path='/breeds' element={<Breeds />}/>
+        <Route path='/breeds/:name' element={<BreedDetails />}/>
       </Routes>
     </BrowserRouter>
   
