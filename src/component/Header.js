@@ -6,15 +6,15 @@ import akLogo from '../img/aklogo.png'
 const Header = () => {
   let Links = [
     { name: "HOME", link: "/" },
-    { name: "Facts", link: "/fact" },
-    { name: "Breeds", link: "/breeds" },
-    { name: "About", link: "/about" },
+    { name: "FACTS", link: "/fact" },
+    { name: "BREEDS", link: "/breeds" },
+    { name: "ABOUT", link: "/about" },
     { name: "CONTACT", link: "/contact" },
   ];
   let [open, setOpen] = useState(false);
   return (
     <div className='shadow-md w-full  top-0 left-0 mb-9'>
-      <div className='md:flex items-center sticky justify-between bg-blue-500 text-white py-4 md:px-10 px-7'>
+      <div className='md:flex items-center sticky justify-between bg-slate-700 text-white py-4 md:px-10 px-7'>
         <Link to={'/'} >
         <div className='font-bold text-2xl cursor-pointer flex items-center font-[Poppins] 
     text-gray-800 self-center z-10'>
@@ -34,7 +34,7 @@ const Header = () => {
           <i className={'fa-solid ' + (open ? 'fa-circle-xmark ' : 'fa-bars')}></i>
         </div>
 
-        <ul className={`md:flex md:items-center md:pb-0 pb-12 absolute md:static bg-blue-500 text-white md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ${open ? 'top-20 ' : 'top-[-490px]'}`}>
+        <ul className={`md:flex md:items-center md:pb-0 pb-12 absolute md:static bg-blue-500 md:bg-slate-700 text-white md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ${open ? 'top-20 ' : 'top-[-490px]'}`}>
           {
             Links.map((link) => (
               <li key={link.name} className='md:ml-8 text-xl md:my-0 my-7 text-white'>
