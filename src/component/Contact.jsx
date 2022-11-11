@@ -7,24 +7,29 @@ const Contact = () => {
 
     const [load, setLoad] = useState('Send Feedback');
     const [errors, setErrors] = useState({
-        from_name: '',
-        reply_to: '',
-        message: '',
+        from_name: 's',
+        reply_to: 's',
+        message: 's',
     })
 
 
     const validEmailRegex = RegExp(
         /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
     );
-    const validateForm = errors => {
+    const validateForm = () => {
         let valid = true;
-        Object.values(errors).forEach(val => val.length >= 0 && (valid = false));
+        Object.values(errors).forEach(val => {
+            console.log("a" + val + "b", val.length)
+
+            return (val.length > 0 && (valid = false))
+        });
         return valid;
     };
 
     const handleChange = (event) => {
         event.preventDefault();
         const { name, value } = event.target;
+
         let error = '';
 
         switch (name) {
@@ -40,9 +45,9 @@ const Contact = () => {
                         ? ''
                         : 'Email is not valid!';
                 break;
-            case 'password':
+            case 'message':
                 error =
-                    value.message < 4
+                    value.length < 4
                         ? 'Feedback must contain atleast 4 characters'
                         : '';
                 break;
@@ -57,11 +62,11 @@ const Contact = () => {
 
         e.preventDefault();
 
-        console.log(errors.from_name.length)
-        if (!validateForm(errors)) {
+        // console.log(errors.from_name.length)
+        if (!validateForm()) {
             return
         }
-       
+
 
         console.log('called')
         setLoad('sending ...')
@@ -76,6 +81,12 @@ const Contact = () => {
                 setLoad('Send Feedback')
                 e.target.reset()
             });
+
+        setErrors({
+            from_name: 's',
+            reply_to: 's',
+            message: 's',
+        })
 
 
     };
@@ -96,7 +107,7 @@ const Contact = () => {
                                 onChange={handleChange}
 
                             />
-                            {errors.from_name.length > 0 &&
+                            {errors.from_name.length > 1 &&
                                 <span className='bg-red-400 mt-1 px-3 text-center rounded-3xl'>{errors.from_name}</span>}
 
                         </div>
@@ -108,7 +119,7 @@ const Contact = () => {
                                 placeholder='Enter Your Email'
                                 onChange={handleChange}
                             />
-                            {errors.reply_to.length > 0 &&
+                            {errors.reply_to.length > 1 &&
                                 <span className='bg-red-400 mt-1 px-3 text-center rounded-3xl'>{errors.reply_to}</span>}
                         </div>
 
@@ -119,7 +130,7 @@ const Contact = () => {
                                 placeholder='Give your feedback'
                                 onChange={handleChange}
                             />
-                            {errors.message.length > 0 &&
+                            {errors.message.length > 1 &&
                                 <span className='bg-red-400 mt-1 px-3 text-center rounded-3xl'>{errors.message}</span>}
                         </div>
                     </div>
