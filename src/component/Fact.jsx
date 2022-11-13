@@ -61,6 +61,7 @@ const Fact = () => {
                     Next Fact
                 </button>
                 <button className='bg-sky-500 hover:bg-sky-700 p-3 text-white rounded-3xl cursor-pointer' onClick={setFavt}>
+                <i class="fa-regular fa-star pr-2"></i>
                     Favourite
                 </button>
                 <span className='bg-sky-500 hover:bg-sky-700 p-3 text-white rounded-3xl cursor-pointer'>
@@ -72,7 +73,9 @@ const Fact = () => {
                         }}
                     // onClick={() => console.log("shared successfully!")}
                     >
-                        <button>Share Fact</button>
+                        <button>
+                        <i class="fa-solid fa-share pr-2"></i>
+                            Share Fact</button>
                     </RWebShare>
                 </span>
             </div>
@@ -96,7 +99,10 @@ const Fact = () => {
                                     </p>
                                     <div className='flex justify-around'>
 
-                                        <button className='bg-red-600 max-w-max self-center p-2 mt-2 rounded-3xl ' id={index} onClick={() => delFavt(index)}>Remove</button>
+                                        <button className='bg-red-600 max-w-max self-center p-2 mt-2 rounded-3xl ' id={index} onClick={() => delFavt(index)}>
+                                        <i class="fa-solid fa-trash pr-2"></i>
+                                        Remove
+                                            </button>
 
                                         <RWebShare
                                             data={{
@@ -106,7 +112,9 @@ const Fact = () => {
                                             }}
                                         // onClick={() => console.log("shared successfully!")}
                                         >
-                                            <button className='bg-blue-400 max-w-max self-center p-2 mt-2 rounded-3xl '>Share Fact</button>
+                                            <button className='bg-blue-400 max-w-max self-center p-2 mt-2 rounded-3xl '>
+                                            <i class="fa-solid fa-share pr-2"></i>
+                                                Share Fact</button>
                                         </RWebShare>
 
                                     </div>

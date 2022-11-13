@@ -97,7 +97,7 @@ const Contact = () => {
                 <form ref={form} onSubmit={sendEmail}>
                     <div className='flex flex-col'>
                         <div className='text-center text-3xl mb-3 underline'>
-                            Contact us
+                            Contact Us
                         </div>
                         <div className='flex flex-col items-center mb-3'>
 

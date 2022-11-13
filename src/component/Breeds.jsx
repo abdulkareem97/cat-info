@@ -64,7 +64,7 @@ const Breeds = () => {
                 </div>
                 <div className='bg-slate-600 mx-3 p-3 flex justify-center'>
                     <input type="text"
-                        className='bg-slate-500 text-2xl p-3 w-3/4 text-white'
+                        className='bg-slate-500 text-2xl p-3 w-3/4 text-white rounded-md placeholder:text-center'
                         onChange={(e) => filterBreedsData(e.target.value)}
                         placeholder='Search By Breed Name'
                     />
@@ -106,12 +106,10 @@ const Breeds = () => {
                                         <div className='shadow-md text-3xl p-3 text-white'>
                                             {ele.breed}
                                         </div>
-                                        {/* <button className='bg-blue-400 max-w-max self-center p-2 mt-2 rounded-md m-2'
-                                            onClick={() => changeMode(ele.breed)}
-                                        >
-                                            view Details
-                                        </button> */}
-                                        <Link to={'/breeds/' + ele.breed} className='bg-blue-400 max-w-max self-center p-2 mt-2 rounded-md m-2'>View Details</Link>
+                                       
+                                        <Link to={'/breeds/' + ele.breed} className='bg-blue-400 max-w-max self-center p-2 mt-2 rounded-md m-2'>
+                                        <i class="fa-solid fa-eye pr-2"></i>
+                                            View Details</Link>
                                     </div>
                                 )
 

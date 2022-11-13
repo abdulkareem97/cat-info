@@ -146,7 +146,7 @@ const BreedDetails = () => {
 
                     <div className='flex justify-around'>
                         <Link to={'/breeds'} className='bg-red-600 max-w-max self-center p-3  mt-2 rounded-3xl' >Go Back</Link>
-                        <span className='bg-sky-500 hover:bg-sky-700 p-3 text-white rounded-3xl cursor-pointer max-w-max'>
+                        <span className='bg-sky-500 hover:bg-sky-700 p-3 mt-2 text-white rounded-3xl cursor-pointer max-w-max'>
                             <RWebShare
                                 data={{
                                     text: '',
@@ -155,7 +155,9 @@ const BreedDetails = () => {
                                 }}
                             // onClick={() => console.log("shared successfully!")}
                             >
-                                <button>Share Fact</button>
+                                <button className=''>
+                                <i class="fa-solid fa-share pr-2"></i>
+                                    Share Details </button>
                             </RWebShare>
                         </span>
                     </div>
